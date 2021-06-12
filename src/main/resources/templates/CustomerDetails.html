@@ -1,10 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
 <head>
-    <meta charset="UTF-8">
-    <title>Title</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Customer Details</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" rel="stylesheet" type="text/css"/>
+    <link th:href="@{../main.css}" href="../main.css"
+          rel="stylesheet" type="text/css"/>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script th:src="@{../footer.js}" src="../footer.js"></script>
+
 </head>
 <body>
+<main>
+    <h1>Customer Details</h1>
+    <div th:object="${customer}">
+        <p>
+            <label class="group_label">First Name:</label>
+            <span class="output" th:text="*{firstName}"></span>
+        </p>
+        <p>
+            <label class="group_label">Last Name:</label>
+            <span class="output" th:text="*{lastName}"></span>
+        </p>
+        <p>
+            <label class="group_label">Email:</label>
+            <span class="output" th:text="*{email}"></span>
+        </p>
+        <p>
+            <label class="group_label">Street:</label>
+            <span class="output" th:text="*{street}"></span>
+        </p>
+        <p>
+            <label class="group_label">City:</label>
+            <span class="output" th:text="*{city}"></span>
+        </p>
+        <p>
+            <label class="group_label">State:</label>
+            <span class="output" th:text="*{state}"></span>
+        </p>
+        <p>
+            <label class="group_label">Zip_Code:</label>
+            <span class="output" th:text="*{zip_Code}"></span>
+        </p>
 
+    </div>
+
+    <p><a href="CustomerList.html" th:href="@{../CustomerList}">Customer List</a></p>
+</main>
 </body>
 </html>
